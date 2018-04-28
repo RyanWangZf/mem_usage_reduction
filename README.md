@@ -11,7 +11,7 @@ props,nalist,dtype_dict = reduce_mem_usage.get(df)
 It fills NaN with the minimum-1 under a column.  
 nalist indicates the columns which have NaN and props is the compressed dataframe.  
 props is compressed df.  
-dtype_dict contains the dtype of each column of compressed, that will assist pd.read_csv('example.csv',dtype=dtype_dict) process.  
+dtype_dict contains the dtype of each column of compressed, that is used in pd.read_csv('example.csv',dtype=dtype_dict) process.  
 
 You can also save dtype_dict and load it as follows:  
 
