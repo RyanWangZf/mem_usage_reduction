@@ -13,12 +13,12 @@ props is compressed df.
 dtype_dict contains the dtype of each column of compressed, that will assist pd.read_csv('example.csv',dtype=dtype_dict) process.  
 You can also save dtype_dict and load it as follows:  
 %save
-import json
-f = open('dict.json','w',encoding='utf_8_sig')
-json.dump(dtype_dict,f)
+import json  
+f = open('dict.json','w',encoding='utf_8_sig')  
+json.dump(dtype_dict,f)  
 f.close()  
-%load
-f = open('dict.json','r')
+%load  
+f = open('dict.json','r')  
 dtype_dict = f.read()  
 dtype_dict = eval(dtype_dict)  
 
