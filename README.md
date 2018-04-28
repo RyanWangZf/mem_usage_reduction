@@ -25,6 +25,7 @@ f.close()
 f = open('dict.json','r')  
 dtype_dict = f.read()  
 dtype_dict = eval(dtype_dict)  
+f.close()  
 
 # Environment  
 Python 3.6.2 AMD64  
