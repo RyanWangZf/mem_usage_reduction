@@ -8,7 +8,7 @@ df = pd.read_csv('example.csv')
 props,nalist = reduce_mem_usage.reduce_mem_usage(df) 
 
 # Attention  
-It fills NaN data with the minimum under the column, nalist indicates the columns which have NaN and props is the compressed dataframe.  
+It fills NaN with the minimum-1 under the column, nalist indicates the columns which have NaN and props is the compressed dataframe.  
 
 # Environment  
 Python 3.6.2 AMD64  
