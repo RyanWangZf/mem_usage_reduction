@@ -15,7 +15,7 @@ dtype_dict contains the dtype of each column of compressed, that will assist pd.
 
 You can also save dtype_dict and load it as follows:  
 
-%save
+%save  
 import json  
 f = open('dict.json','w',encoding='utf_8_sig')  
 json.dump(dtype_dict,f)  
