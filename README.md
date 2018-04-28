@@ -33,4 +33,5 @@ pandas (0.20.3)
 numpy (1.13.3+mkl)  
 
 # Addtional  
-Get it from Internet so that if any copyright is violated, contact me and I will delete it soon.  
+No copyright, feel free to use it.  
+
