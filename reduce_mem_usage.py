@@ -3,8 +3,10 @@
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 
-def reduce_mem_usage(props):
+def get(props):
     start_mem_usg = props.memory_usage().sum() / 1024**2 
+    # Record dtype of every processed column
+    dtype_dict = {}
     print("Memory usage of properties dataframe is :",start_mem_usg," MB")
     NAlist = [] # Keeps track of columns that have missing values filled in. 
     for col in props.columns:
@@ -59,6 +61,7 @@ def reduce_mem_usage(props):
                 props[col] = props[col].astype(np.float32)
             
             # Print new column type
+            dtype_dict[col] = str(props[col].dtype)
             print("dtype after: ",props[col].dtype)
             print("******************************")
     
@@ -67,13 +70,11 @@ def reduce_mem_usage(props):
     mem_usg = props.memory_usage().sum() / 1024**2 
     print("Memory usage is: ",mem_usg," MB")
     print("This is ",100*mem_usg/start_mem_usg,"% of the initial size")
-    return props, NAlist
+    return props, NAlist,dtype_dict
     '''
     props = pd.read_csv(r"../input/properties_2016.csv")  #The properties dataset
-
     #train = pd.read_csv(r"../input/train_2016_v2.csv")   # The parcelid's with their outcomes
     #samp = pd.read_csv(r"../input/sample_submission.csv")  #The parcelid's for the testset
-
     props, NAlist = reduce_mem_usage(props)
     print("_________________")
     print("")
